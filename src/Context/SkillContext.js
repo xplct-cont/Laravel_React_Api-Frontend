@@ -8,6 +8,10 @@ const SkillContext = createContext();
 
 const initialForm = {
   name: "",
+  address: "",
+  contact_no: "",
+  age: "",
+  department: "",
   slug: "",
 };
 
@@ -33,6 +37,10 @@ export const SkillProvider = ({ children }) => {
     setSkill(apiSkill);
     setFormValues({
       name: apiSkill.name,
+      address: apiSkill.address,
+      contact_no: apiSkill.contact_no,
+      age: apiSkill.age,
+      department: apiSkill.department,
       slug: apiSkill.slug,
     });
   };
@@ -55,7 +63,7 @@ export const SkillProvider = ({ children }) => {
     try {
       await axios.put("skills/" + skill.id, formValues);
       setFormValues(initialForm);
-      navigate("/skills");
+      navigate("/employees");
     } catch (e) {
       if (e.response.status === 422) {
         setErrors(e.response.data.errors);
@@ -64,7 +72,7 @@ export const SkillProvider = ({ children }) => {
   };
 
   const deleteSkill = async (id) => {
-    if (!window.confirm("Are you sure")) {
+    if (!window.confirm("Are you sure you want to delete this employee?")) {
       return;
     }
     await axios.delete("skills/" + id);

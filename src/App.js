@@ -17,15 +17,15 @@ function App() {
                 <Link to="/">Home</Link>
               </li>
               <li className="m-2 p-2 bg-indigo-500 hover:bg-indigo-700 text-white rounded-md">
-                <Link to="/skills">Skills</Link>
+                <Link to="/employees">Skills</Link>
               </li>
             </ul>
           </nav>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/skills" element={<SkillIndex />} />
-            <Route path="/skills/create" element={<SkillCreate />} />
-            <Route path="/skills/:id/edit" element={<SkillEdit />} />
+            <Route path="/employees" element={<SkillIndex />} />
+            <Route path="/employees/create" element={<SkillCreate />} />
+            <Route path="/employees/:id/edit" element={<SkillEdit />} />
           </Routes>
         </div>
       </div>

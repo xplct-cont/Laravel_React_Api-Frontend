@@ -11,12 +11,14 @@ export const SkillCreate = () => {
     <div className="mt-12">
       <form
         onSubmit={storeSkill}
-        className="max-w-md mx-auto p-4 bg-white shadow-md rounded-sm"
-      >
+        className="create-form">
+          <div className="create-form-header">
+            Create New Employee 
+          </div><hr /><br />
         <div className="space-y-6">
           <div className="mb-4">
             <label htmlFor="name" className="block mb-2 text-sm font-medium">
-              Name
+              Employee Name
             </label>
             <input
               name="name"
@@ -28,9 +30,71 @@ export const SkillCreate = () => {
               <span className="text-sm text-red-400">{errors.name[0]}</span>
             )}
           </div>
+
+          <div className="mb-4">
+            <label htmlFor="address" className="block mb-2 text-sm font-medium">
+              Address
+            </label>
+            <input
+              name="address"
+              value={formValues["address"]}
+              onChange={onChange}
+              className="border border-gray-300 text-gray-900 text-sm rounded-md block w-full p-2"
+            />
+            {errors.address && (
+              <span className="text-sm text-red-400">{errors.address[0]}</span>
+            )}
+          </div>
+
+
+          <div className="mb-4">
+            <label htmlFor="contact_no" className="block mb-2 text-sm font-medium">
+              Contact No.
+            </label>
+            <input
+              name="contact_no"
+              value={formValues["contact_no"]}
+              onChange={onChange}
+              className="border border-gray-300 text-gray-900 text-sm rounded-md block w-full p-2"
+            />
+            {errors.contact_no && (
+              <span className="text-sm text-red-400">{errors.contact_no[0]}</span>
+            )}
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="age" className="block mb-2 text-sm font-medium">
+              Age
+            </label>
+            <input
+              name="age"
+              value={formValues["age"]}
+              onChange={onChange}
+              className="border border-gray-300 text-gray-900 text-sm rounded-md block w-full p-2"
+            />
+            {errors.age && (
+              <span className="text-sm text-red-400">{errors.age[0]}</span>
+            )}
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="department" className="block mb-2 text-sm font-medium">
+              Department
+            </label>
+            <input
+              name="department"
+              value={formValues["department"]}
+              onChange={onChange}
+              className="border border-gray-300 text-gray-900 text-sm rounded-md block w-full p-2"
+            />
+            {errors.department && (
+              <span className="text-sm text-red-400">{errors.department[0]}</span>
+            )}
+          </div>
+
           <div className="mb-4">
             <label htmlFor="slug" className="block mb-2 text-sm font-medium">
-              Slug
+              Skills
             </label>
             <input
               name="slug"
@@ -46,9 +110,8 @@ export const SkillCreate = () => {
         <div className="my-4">
           <button
             type="submit"
-            className="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 text-white rounded-md"
-          >
-            Store
+            className="btn-submit px-4 py-2 bg-indigo-500 hover:bg-indigo-700 text-white rounded-md">
+            Submit
           </button>
         </div>
       </form>
