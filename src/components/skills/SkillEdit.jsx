@@ -100,7 +100,7 @@ export const SkillEdit = () => {
           </div>
           <div className="mb-4">
             <label htmlFor="slug" className="block mb-2 text-sm font-medium">
-              Skills
+              Skill
             </label>
             <input
               name="slug"

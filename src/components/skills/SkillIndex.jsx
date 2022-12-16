@@ -2,13 +2,16 @@ import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import SkillContext from "../../Context/SkillContext";
 
+
 export const SkillIndex = () => {
   const { skills, getSkills, deleteSkill } = useContext(SkillContext);
   useEffect(() => {
     getSkills();
   }, []);
   return (
+   
     <div className="mt-12">
+       <h2>List of Employees</h2>
       <div className="btn-create-side m-2 p-2">
         <Link
           to="/employees/create"
@@ -53,7 +56,7 @@ export const SkillIndex = () => {
               return (
                 <tr
                   key={skill.id}
-                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  className="tb-body-2"
                 >
                   <td className="py-4 px-6">{skill.id}</td>
                   <td className="py-4 px-6">{skill.name}</td>
@@ -83,5 +86,6 @@ export const SkillIndex = () => {
         </table>
       </div>
     </div>
+ 
   );
 };

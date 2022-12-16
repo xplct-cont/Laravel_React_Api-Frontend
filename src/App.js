@@ -9,18 +9,17 @@ import { SkillEdit } from "./components/skills/SkillEdit";
 function App() {
   return (
     <SkillProvider>
-      <div className="bg-slate-200">
-        <div className="max-w-7xl mx-auto min-h-screen">
-          <nav>
-            <ul className="flex">
-              <li className="m-2 p-2 bg-indigo-500 hover:bg-indigo-700 text-white rounded-md">
-                <Link to="/">Home</Link>
-              </li>
-              <li className="m-2 p-2 bg-indigo-500 hover:bg-indigo-700 text-white rounded-md">
-                <Link to="/employees">Skills</Link>
-              </li>
-            </ul>
-          </nav>
+      <div className="">
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <div className="mx-auto ">
+
+          <ul>
+            <li className=""> <Link to="/">Home</Link></li>
+            <li className=""> <Link to="/employees">Employees</Link></li>
+          </ul>
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/employees" element={<SkillIndex />} />

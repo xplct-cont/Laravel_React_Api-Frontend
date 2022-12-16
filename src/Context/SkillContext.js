@@ -50,7 +50,7 @@ export const SkillProvider = ({ children }) => {
     try {
       await axios.post("skills", formValues);
       setFormValues(initialForm);
-      navigate("/skills");
+      navigate("/employees");
     } catch (e) {
       if (e.response.status === 422) {
         setErrors(e.response.data.errors);
